@@ -1,0 +1,234 @@
+:root {
+  --bg:         #0f0f13;
+  --surface:    #181820;
+  --border:     #2a2a36;
+  --pink:       #e8507a;
+  --pink-soft:  #f28baa;
+  --green:      #7ed9a0;
+  --green-dim:  #4db87a;
+  --text:       #e8e8f0;
+  --muted:      #8888a0;
+}
+
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* ── HERO ── */
+header {
+  padding: 5rem 2rem 3rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.avatar {
+  width: 100px; 
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid var(--pink);
+  margin: 0 auto 1.4rem;
+  background: var(--surface);
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  font-size: 2.4rem;
+}
+.avatar img {
+  width: 100%;       /* Faz a imagem preencher a div .avatar */
+  height: 100%;      /* Preenche a div .avatar totalmente */
+  object-fit: cover; /* Garante que a foto preencha o círculo sem distorcer */
+  border-radius: 50%; /* Mantém o corte redondo da foto */
+}
+
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  line-height: 1.2;
+}
+
+header h1 span { 
+  color: var(--pink); 
+}
+
+.tagline {
+  margin-top: .7rem;
+  font-size: .97rem;
+  color: var(--muted);
+  max-width: 460px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tagline strong { 
+  color: var(--green); 
+  font-weight: 500; 
+}
+
+/* ── LAYOUT ── */
+main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.6rem 6rem;
+}
+
+section {
+  margin-top: 6rem;
+}
+
+.section-label {
+  font-size: .7rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--pink);
+  font-weight: 500;
+  margin-bottom: .6rem;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: var(--text);
+  margin-bottom: 1.6rem;
+}
+
+.divider {
+  width: 48px; 
+  height: 3px;
+  background: linear-gradient(90deg, var(--pink), var(--green));
+  border-radius: 2px;
+  margin-bottom: 2rem;
+}
+
+/* ── SOBRE MIM ── */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.info-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.3rem 1.4rem;
+}
+
+.info-card .label {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--muted);
+  margin-bottom: .3rem;
+}
+
+.info-card .value {
+  font-size: .97rem;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.bio {
+  margin-top: 1.4rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--pink);
+  border-radius: 0 12px 12px 0;
+  padding: 1.4rem 1.6rem;
+  font-size: .97rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.bio em { 
+  color: var(--green); 
+  font-style: normal; 
+  font-weight: 500; 
+}
+
+/* ── CURIOSIDADES ── */
+.curiosity-list {
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+}
+
+.curiosity-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: .6rem 1.2rem;
+  transition: border-color .2s;
+}
+
+.curiosity-item:hover { 
+  border-color: var(--pink-soft); 
+}
+
+.curiosity-item strong {
+  color: var(--text);
+  font-weight: 500;
+  font-size: .95rem;
+}
+
+/* ── HOBBIES ── */
+.hobby-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.hobby-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: transform .2s, border-color .2s;
+}
+
+.hobby-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--green-dim);
+}
+
+.hobby-card .icon { 
+  font-size: 2rem; 
+  margin-bottom: .6rem; 
+}
+
+.hobby-card .name { 
+  font-size: .9rem; 
+  color: var(--text); 
+  font-weight: 400; 
+}
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: .82rem;
+}
+
+footer span { 
+  color: var(--pink); 
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 540px) {
+  .info-grid { 
+    grid-template-columns: 1fr; 
+  }
+}
